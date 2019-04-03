@@ -18,7 +18,7 @@ Add or remove PARAMETERs as required.
 
 .NOTES
     Updated: 09.02.2019 - First script
-    Release Date: 9th of Februaru 2019
+    Release Date: 9th of February 2019
    
   Author: Kjetil Grun
 
@@ -44,7 +44,7 @@ param (
 )
 
 function set-variables {
-	if ($workingdir -eq $null) {
+	if ($workingdir.Length -eq 0) {
 		$workingdir = "c:\watchdog\"
 	}
 	if (!(Test-Path $workingdir)) {
@@ -125,6 +125,7 @@ function write-result {
 	}
 	foreach ($line in (get-content $messageFile)) {
 		# insert preferred channel for messagin; email, slack, SMS, push....
+		Write-Host $line
 	}
 		
 	stop-script
