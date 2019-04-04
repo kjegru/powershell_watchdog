@@ -124,7 +124,7 @@ function write-result {
 		Add-Content -Path $messageFile -Value "First run for $customer on folder $directoryPath on host $hostname."
 	}
 	foreach ($line in (get-content $messageFile)) {
-		# insert preferred channel for messagin; email, slack, SMS, push....
+		# insert preferred channel for messaging; email, slack, SMS, push....
 		Write-Host $line
 	}
 		
